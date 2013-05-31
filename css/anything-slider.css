@@ -1,0 +1,151 @@
+/*
+    AnythingSlider v1.4.1+ Default (base) theme
+
+    By Chris Coyier: http://css-tricks.com
+    with major improvements by Doug Neiner: http://pixelgraphics.us/
+    based on work by Remy Sharp: http://jqueryfordesigners.com/
+*/
+
+/******* SET DEFAULT DIMENSIONS HERE ********/
+div.anythingSlider {
+	width: 284px;
+	height: 453px;
+	margin: 0 auto;
+}
+
+
+/* anythingSlider Viewport Window */
+
+div.anythingSlider .anythingWindow {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+div.anythingSlider {
+	position: relative;
+	padding: 0;
+}
+
+/* anythingSlider Base UL */
+
+ul.anythingBase {
+	background: transparent;
+	list-style: none;
+	position: absolute;
+}
+ul.anythingBase li.panel {
+	background: transparent;
+	display: block;
+	overflow: hidden;
+	float: left;
+}
+
+/* Navigation Arrows (Not visible by default) */
+
+div.anythingSlider .arrow {
+	bottom: 0;
+	position: absolute;
+	display: block;
+	z-index: 200;
+}
+
+div.anythingSlider .arrow a {
+	display: block;
+	width: 18px;
+	height: 18px;
+	background: url(../images/slider-arrows.png) no-repeat;
+	text-indent: -9999px;
+}
+
+div.anythingSlider .forward {
+  right: 8px;
+}
+
+div.anythingSlider .back {
+  left: 8px;
+}
+
+div.anythingSlider .forward a {
+  background-position: -17px 0 !important;
+}
+
+/* Navigation Links */
+
+div.anythingSlider .anythingControls {
+  position: absolute;
+  width: 100%;
+	bottom: 0;
+}
+
+div.anythingSlider .thumbNav {
+  text-align: center;
+  padding-top: 3px;
+}
+
+div.anythingSlider .thumbNav li {
+	display: inline;
+}
+
+div.anythingSlider .thumbNav a {
+  cursor: pointer;
+	display: inline-block;
+	margin: 0 2px;
+    width: 18px;
+	height: 18px;
+  background: url(../images/slider-bullets.png) no-repeat;
+  text-indent: -9999px;
+  zoom: 1;
+}
+* html .nivo-controlNav a {text-indent:0; line-height:0; font-size:0; overflow:hidden}/*ie6 hack */
+*:first-child+html .nivo-controlNav a { text-indent:0; line-height:0; font-size:0; overflow:hidden}/*ie7 hack */
+
+div.anythingSlider.activeSlider .thumbNav a.cur {
+  background-position: 0 -19px;
+}
+
+/* Autoplay Start/Stop button (Not visible by default, disabled by css) */
+
+div.anythingSlider .start-stop {
+  display: none;
+  position: absolute;
+  right: 6%;
+  margin-top: 2px;
+	z-index: 100;
+	color: #444;
+}
+
+div.anythingSlider, div.anythingSlider .anythingWindow, div.anythingSlider .thumbNav a, div.anythingSlider .arrow a, div.anythingSlider .start-stop {
+ transition-duration: 0;
+	-o-transition-duration: 0;
+	-moz-transition-duration: 0;
+	-webkit-transition-duration: 0;
+}
+
+/* For Specific Slides */
+
+.text-slide {
+  padding: 30px 35px;
+}
+
+.content-text {
+  float: left;
+  width: 300px;
+  color: #777;
+}
+
+.content-text .button {
+  margin-top: 10px;
+}
+
+.content-spacer {
+  float: left;
+  width: 45px;
+  height: 100%;
+}
+
+.content-other {
+  float: left;
+  width: 500px;
+}

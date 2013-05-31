@@ -1,0 +1,543 @@
+/*
+Theme Name: TFC
+Theme URI: http://www.novacambodia.com
+Description: A theme by <a href=" http://www.novacambodia.com">Nova Cambodia</a>
+Version: 1.0
+Author: Peas Sopheak
+Author URI: http://www.novacambodia.com
+*/
+
+
+
+/* ---------- @ HTML Tags -----------*/
+
+body {font-size:75%;color:#555555;background:#fff url(images/body-bg.jpg) repeat-x;font-family:Arial, Helvetica, sans-serif;}
+h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#333333!important;}
+h1 {font-size:3em;line-height:1;margin-bottom:0.5em;}
+h2 {font-size:2em;margin-bottom:0.75em;}
+h3 {font-size:1.5em;line-height:1;margin-bottom:1em;}
+h4 {font-size:1.2em;line-height:1.25;margin-bottom:0.50em;}
+h5 {font-size:1em;font-weight:bold;margin-bottom:1.5em;}
+h6 {font-size:1em;font-weight:bold;}
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {margin:0;}
+p {padding:0 0 1.5em;}
+p img.left {float:left;margin:1.5em 1.5em 1.5em 0;padding:0;}
+p img.right {float:right;margin:1.5em 0 1.5em 1.5em;}
+a:focus, a:hover {color:#EC4B27;}
+a:hover{text-decoration:underline;}
+a {color:#045BA6;text-decoration:none;outline:none;}
+blockquote {margin:1.5em;color:#666;font-style:italic;}
+strong {font-weight:bold;}
+em, dfn {font-style:italic;}
+dfn {font-weight:bold;}
+address {margin:0 0 1.5em;font-style:italic;}
+li ul, li ol {margin:0 1.5em;}
+ul, ol {margin:0 1.5em 1.5em 1.5em;}
+ul {list-style-type:disc;}
+ol {list-style-type:decimal;}
+dl {margin:0 0 1.5em 0;}
+dl dt {font-weight:bold;}
+dd {margin-left:1.5em;}
+table {margin-bottom:1.4em;width:100%;}
+th {font-weight:bold;}
+thead th {background:#c3d9ff;}
+th, td, caption {padding:4px 10px 4px 5px;}
+tr.even td {background:#e5ecf9;}
+tfoot {font-style:italic;}
+caption {background:#eee;}
+
+
+/* ---------- @ Structure -----------*/
+
+#wrap{width:960px;margin:10px auto;}
+#header{background:url(images/header-bg.png) no-repeat;height:178px;display:block;}
+#header h2{padding:22px 0 0 45px;}
+#header h2 a{display:block;text-indent:-9999px;background:url(images/logo.jpg) no-repeat;width:120px;height:130px;}
+
+	/*menu level 1*/
+	#nav{width:940px;margin:auto;background:url(images/nav-bg.png) no-repeat;height:32px;z-index:1;}
+	
+	#nav .menu, #nav .languages, #nav .menu li ul{list-style:none;}
+	#nav .menu, #nav .languages{float:left;margin:0;}
+	#nav .menu{width:812px;}
+	#nav .menu li{float:left;line-height:32px;padding:0 13px;position:relative; z-index:99;}
+	#nav .menu li.first, #nav .menu li ul li{background:none;}
+	#nav .menu li a{color:#fff;font-size:14px;outline-style:none;outline-width:0;display: block;}
+	#nav .menu li a:hover, #nav .menu li.current_page_item a, #nav .menu li.current_page_parent a, #nav .menu li.current-cat a, #nav .menu li.current-post-parent>a, #nav .menu li.current-menu-item a{color:#ec4b27;text-decoration:none;}	
+	
+	/*menu level 2*/
+	#nav .menu ul{width:180px;visibility:hidden;position:absolute;top:100%;left:0;background:#f2f2f2;border-left:1px solid #ccc;border-right:1px solid #ccc;}	
+	#nav .menu li ul, #nav .menu li ul li{margin:0;padding:0;}
+	#nav .menu li ul ul {left:180px; top:0;}
+	#nav .menu ul li{background:#f6f6f6;border-bottom:1px solid #ccc;float:none;line-height:22px;}
+	#nav .menu li ul li a{font-size:12px;width:100%;display:inline-block;padding-left:10px;}/* IE 6 & 7 Needs Inline Block */
+	#nav .menu li.current_page_parent ul li a,#nav .menu li.current_page_item ul li a, #nav .menu li ul li a, #nav .menu li.current-cat ul li a{color:#222;}
+	#nav .menu li.current_page_parent ul li.current_page_item a{color:#ec4b27;}
+	#nav .menu ul li.hover,
+	#nav .menu ul li:hover                { background:#CFF1DD;color:black;}
+	#nav .menu ul li.hover a, #nav .menu ul li a{ color: black; }
+
+#nav .languages li{float:left;padding:5px 5px 0;}
+#nav .languages li.first{color:#0E4F7F;}
+
+#contents{clear:both;width:960px;margin:10px 0;}
+#c1{width:630px;float:left;}
+#c2{width:310px;float:right;}
+#c1 .top{background:url(images/c1-bg.png) no-repeat;height:8px;}
+#c1 .bottom{background:url(images/c1-bg.png) -640px 0 no-repeat;height:8px; margin-bottom:10px;}
+#c1 .middle{background:#fff;padding:7px 10px;}
+#c1 .newest-post{background:#DEF2E4;padding:15px;border: 1px solid #DEF2E4;-webkit-border-radius:6px;-moz-border-radius:6px;}
+#c1 .newest-post img{float:left;margin-right:1.5em;}
+#c1 span.date-post{float:left;}
+
+#more-post .recent-items{background:#F2F2F2;border: 1px solid #F2F2F2;-webkit-border-radius:6px;-moz-border-radius:6px;margin-bottom:10px;padding:10px 7px;}
+#more-post .recent-items img{float:left;margin-right:1.5em;}
+#more-post .recent-items p{padding-bottom:7px;}
+
+#c2 .small-box{margin-bottom:10px;}
+#c2 .small-box h3{margin:0;padding:10px 0 0 10px;color:#fff!important;}
+#c2 .small-box h3 a:hover{text-decoration:none;}
+#c2 .small-box .t{background:url(images/small-box-top.png) no-repeat;height:48px;}
+#c2 .small-box .mid{background:url(images/small-box-mid.gif) repeat-y;font-size:11px;padding:2px 10px;}
+#c2 .small-box .nopadded{padding:2px 5px; background:url(images/small-box-mid.gif) repeat-y;}
+#c2 .small-box .mid h5{margin:0;padding:5px 0;}
+#c2 .small-box .mid p{padding:0;line-height:1.2em;}
+#c2 .small-box .b{background:url(images/small-box-bottom.png) no-repeat;height:15px;}
+
+#footer-container{background:#fff url(images/footer-bg.gif) repeat-x;padding-top:15px;}
+#short-page, #sponsors{width:960px;margin:auto;}
+#short-page h4{margin-bottom:0.3em;}
+#short-page h4 a{color:#000;}
+#short-page h4 a:hover{text-decoration:none;}
+#short-page p{font-size:11px;color:#fff;line-height:1.2em;letter-spacing:0.5px;}
+
+#sponsors{margin-top:10px;text-align:center;padding:10px 0;}
+#sponsors img{margin-right:20px;}
+
+#copyright{font-size:9px;font-family:Verdana;color:#fff;text-align:center;background:#00A748;padding:3px 0;}
+#copyright a{color:#000;}
+
+/* ---------- Top Menu ---------- */
+ul.menutop{float:right;}
+ul.menutop, ul.menutop > ul {
+	line-height:1;
+	list-style:none outside none;
+	margin:0;
+	padding:0;	
+}
+ul.menutop {
+	height:36px;
+}
+ul.menutop > li {
+	float:left;
+	margin:0;
+	width:auto;
+	position: relative;
+}
+ul.menutop > li.separator {
+	background:#4A4A4A;
+	border-right:1px solid #848484;
+	height:38px;
+	width:1px;
+}
+
+/*.current_page_item, #nav > li:hover {
+	border-bottom:3px solid #fff;
+}*/
+
+ul.menutop > li a {
+	color:#fff;
+	display:block;
+	line-height:38px;
+	padding:0 10px;
+	z-index:100;
+	text-decoration:none;
+}
+
+ul.menutop > li a.last{
+	padding-right:0;
+}
+
+ul.menutop > li a:hover, ul.menutop .current_page_item a, ul.menutop li.current-menu-item a,ul.menutop .current-menu-parent > a {
+	color:#EC4B27;
+	text-decoration:none;
+}
+
+ul.menutop .dropdown_submenu, ul.menutop .sub-menu{
+	position:absolute;
+	left:0px;
+	font-size:14px;
+	z-index:1000;
+	display:none;
+}
+
+ul.menutop .single, ul.menutop .sub-menu{
+	width: 180px;
+	background:#f2f2f2;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-top:1px solid #ccc;
+}
+ul.menutop .double{
+	width: 300px;
+}
+ul.menutop .tripple{
+	width: 450px;
+}
+ul.menutop a.dropdown_subfoot{
+	background-color:#62BA37;
+	color:#eee;
+	display:block;
+	clear:both;
+	font-size:11px;
+	text-transform: uppercase;
+	text-align: right;
+	font-weight: bold;
+}
+ul.menutop li.dropdown_heading{
+	font-weight: bold;
+	color:#eee;
+	text-shadow:0 1px 0 #222;
+	padding:0 0 10px;
+	font-size: 14px;
+}
+
+ul.menutop .dropdown_submenu ul, ul.menutop .sub-menu{
+	list-style:none;
+	float:left;
+	margin:0;
+	padding:0;
+	top:36px;
+}
+ul.menutop .dropdown_submenu li, ul.menutop .sub-menu li {
+	padding-left: 6px;
+	background:#f6f6f6;
+	border-bottom:1px solid #ccc;
+	line-height:22px;
+}
+ul.menutop .dropdown_submenu li:hover, ul.menutop .sub-menu li:hover {
+	background:#CFF1DD;
+	color:#333;
+}
+
+ul.menutop .dropdown_submenu li a, ul.menutop .sub-menu li a {
+	line-height: 24px;
+	padding:0;
+	color:#333;
+	font-size:12px;
+}
+
+
+/* ---------- Media Post ---------- */
+#media{
+	width:284px;
+	height:456px;
+	float:left;
+	border: 1px solid #CECECE;
+	padding:8px;
+}
+
+#media ul{
+	margin:0;
+	list-style:none;
+}
+
+#media h2{
+	margin-bottom:-2px;
+	line-height:1em;
+	margin-top:3px;
+}
+
+#media span.date-post{
+	margin-bottom:15px;	
+	display:block;
+}
+
+/* ---------- Breaking News Post ---------- */
+#breaking-news{
+	width:285px;
+	float:right;
+}
+
+#breaking-news ul{
+	margin-bottom:15px;
+}
+
+#breaking-news ul li{
+	border-bottom:1px solid #ccc;
+	padding:7px 0;
+}
+
+#breaking-news span.date-post, #media span.date-post{
+	float:none;
+}
+
+/* ---------- Archives ---------- */
+.archives-items{
+	padding:10px 0 15px;
+	border-bottom:1px solid #cecece;
+}
+
+.archives-items img{
+	float:left;
+	margin-right:10px;
+}
+
+.archives-items h4, .newsletterinfo h4{
+	margin-bottom:0;
+}
+
+.archives-items span.date-post, .newsletterinfo span.date-post{
+	float:none!important;
+	display:block;
+	margin-bottom:10px;
+}
+
+.btn-download{
+	background:url(images/btn-download.png) no-repeat;
+	width:122px;
+	height:30px;
+	text-align:center;
+	font-size:10px;
+	line-height:12px;
+	padding-top:3px;
+}
+
+.btn-download span{
+	font-weight:bold;
+	font-size:11px;
+	color:#333;
+}
+
+.newsletterinfo{
+	width:182px;
+	float:right;
+}
+
+li.newsletter-archive {
+	width:284px;
+	float:left;
+	clear:none!important;
+	margin-right:20px;
+}
+
+/* ---------- International ---------- */
+.international{
+	background:url(images/h-line.gif) 0 25px repeat-x;
+}
+
+.international ul{
+	margin:0;
+}
+
+.international ul li{
+	list-style:none;
+	border-bottom:1px solid #ecede8;
+	padding:5px 7px;
+}
+
+.international ul li a{
+	font-size:13px;
+	line-height:16px;
+}
+
+.international ul li img{
+	float:left;
+	margin:0 7px 0 0;
+}
+
+.international a.morebycats{
+	padding-right:10px;
+}
+
+
+.tabsinternational{
+	padding:0 0 10px 15px!important;
+}
+
+.tabsinternational li{
+	border-bottom:none!important;	
+	padding:0!important;		
+}
+
+.tabsinternational li a{
+	width:65px;
+	text-align:center;
+	float:left;
+	background:url(images/int-tabs.jpg) 0 -26px no-repeat;
+	display:block;
+	margin:0 1px;
+	height:26px;
+	line-height:26px!important;
+	font-weight:bold;
+	text-transform:uppercase;
+	color:#333;
+}
+
+.tabsinternational li a.selected{
+	background-position: 0 0;
+	color:#009933;
+}
+
+/* ---------- flickr ---------- */
+.slickr-flickr-gallery{
+	padding:0!important;
+}
+
+.slickr-flickr-gallery img{
+	padding:3px!important;
+}
+
+.slickr-flickr-gallery img:hover{
+	background-color:#94dfb5!important;
+}
+
+/* ---------- form ---------- */
+#commentform textarea{width:670px;}
+
+/* ---------- Grid style ---------- */
+.grid-05{float:left;width:280px;margin-right:40px;}
+.grid-02{float:left; width:284px; margin-right:20px;}
+
+.border{border:1px solid #666;}
+.padded{padding:7px!important;}
+
+
+/* ---------- Sponsors ----------- */
+.sponsors-items{
+	margin:10px 0;
+}
+
+.sponsors-items img{
+	display:block;
+	float:left;
+	margin-right:10px;
+}
+
+.sponsors-items .desc{
+	width:490px;
+	float:right;
+}
+
+/* ---------- Mix images style ---------- */
+#more-post .recent-items img, #c2 .small-box img, img.alignleft, ul.archive-list li img, .newest-post img, .border, img.aligncenter, img.alignnone, .archives-items img, .sponsors-items img{padding:2px; border:1px solid #CECECE;}
+/*img.alignleft{float:left;margin:5px 15px 10px 0;}*/
+h3.sections{
+	background:#00a748;
+	-moz-border-radius:5px;
+    -webkit-border-radius:5px;
+	padding:8px;
+	color:#fff;
+}
+
+h3.headline{
+	background:url(images/headline-border.gif) repeat-x 0 25px;
+	margin-bottom:0;
+	height:40px;
+	text-transform:uppercase;
+	font-size:16px;
+}
+
+a.morebycats{
+	display:block;
+	text-align:right;
+	color:#666;
+	font-size:11px;	
+	padding:5px 0;
+}
+
+a.readmore{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:11px;
+	font-style:italic;
+	color:#666;
+}
+
+
+/*.entry p{clear:both;}*/
+p img {
+	padding: 0;
+	max-width: 100%;
+	}
+
+/*	Using 'class="alignright"' on an image will (who would've
+	thought?!) align the image to the right. And using 'class="centered',
+	will of course center the image. This is much better than using
+	align="center", being much more futureproof (and valid) */
+
+.post .aligncenter, img.centered {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+img.alignright, .post .alignright {
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+	}	
+
+img.alignleft, .post .alignleft {
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+	}
+	
+.post .wp-caption {
+	background: #f1f1f1;
+	line-height: 18px;
+	margin-bottom: 12px;
+	border:1px solid #CECECE;
+	padding: 1px;
+	text-align: center;
+}
+.post .wp-caption img {
+	margin: 5px 5px 0;
+}
+
+.post .wp-caption p.wp-caption-text{
+	padding-bottom:0;
+	text-align:left;
+}
+
+.post .wp-caption p.wp-caption-text {
+	color: #888;
+	font-size: 12px;
+	margin: 5px;
+}
+.post .wp-smiley {
+	margin: 0;
+}	
+
+.alignright {
+	float: right;
+	}
+
+.alignleft {
+	float: left;
+	}		
+/* End Images */
+
+
+
+/* ---------- Archives Lists ---------- */
+ul.archive-list{list-style:none;margin:20px 0 0;}
+ul.archive-list li{clear:both;}
+ul.archive-list li img{float:left;margin:3px 20px 10px 0}
+div.navigation {text-align:center; margin:10px 0;}
+div.navigation .alignleft{float:left;}
+div.navigation .alignright{float:right;}
+
+/* ---------- Misc styles ---------- */
+.rss-home{float:right;}
+.rss-home img{float:none;margin-right:0 !important;}
+.archives{background:#cff1dd;border: 1px solid #F2F2F2;-webkit-border-radius:6px;-moz-border-radius:6px;margin-top:15px;padding:10px 7px;width:100px;}
+span.date-post{font-size:0.85em;color:#737373;font-family:Georgia, "Times New Roman", Times, serif;letter-spacing:0.1em;}
+.post-title h2, h2.pagetitle{border-bottom:1px dotted #666;color:#222;margin-bottom:3px;}
+.post-date{margin-bottom:15px;}
+.post-month,.post-day{color:#737373;font-family:Georgia, "Times New Roman", Times, serif;letter-spacing:0.1em;}
+.clear{clear:both;}
+.first {margin-left:0;padding-left:0;}
+.last {margin-right:0;padding-right:0;}
+.top {margin-top:0;padding-top:0;}
+.bottom {margin-bottom:0;padding-bottom:0;}
