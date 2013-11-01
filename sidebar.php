@@ -83,7 +83,9 @@
 			?>
                 
 			<li>
-            <a href="<?php the_permalink(); ?>"><?php  echo get_post_image (get_the_id(), '', '', '' .get_bloginfo('template_url') .'/scripts/timthumb.php?q=80&amp;w=40&amp;h=40&amp;src='); ?></a>
+            <a href="<?php the_permalink(); ?>">
+            <img src="<?php  echo get_bloginfo('template_url') .'/scripts/timthumb.php?q=100&amp;w=80&amp;h=80&amp;src=' . sp_post_image('thumbnail'); ?>" />
+            </a>
             
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
             <span class="date-post"><?php the_time('l, F j, Y') ?></span>            
