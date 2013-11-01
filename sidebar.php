@@ -3,10 +3,12 @@
         <div class="t"><h3>Tournaments</h3></div>
         <div class="mid">
         	<?php 				
-				query_posts('cat=28&showposts=1');
+				query_posts('cat=9&showposts=1');
 					while (have_posts()) : the_post(); ?>
 			
-            <a href="<?php the_permalink(); ?>"><?php  echo get_post_image (get_the_id(), '', '', '' .get_bloginfo('template_url') .'/scripts/timthumb.php?q=100&amp;w=284&amp;h=134&amp;src='); ?></a>
+            <a href="<?php the_permalink(); ?>">
+            <img src="<?php  echo get_bloginfo('template_url') .'/scripts/timthumb.php?q=100&amp;w=284&amp;h=134&amp;src=' . sp_post_image('large'); ?>" />
+            </a>
             <h5>
             	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 <span class="date-post">(<?php the_time('n/d/y'); ?>)</span>
@@ -53,7 +55,7 @@
         <ul class="tabsinternational">
         <?php
 			$i = 1; 			
-			$categories=  get_categories('child_of=21&orderby=id'); 
+			$categories=  get_categories('child_of=11&orderby=id'); 
 			  foreach ($categories as $category) {
 			  	if($i<=1) {
 					$option = '<li><a href="#'.$category->category_nicename.'" class="selected">';
@@ -84,7 +86,7 @@
                 
 			<li>
             <a href="<?php the_permalink(); ?>">
-            <img src="<?php  echo get_bloginfo('template_url') .'/scripts/timthumb.php?q=100&amp;w=80&amp;h=80&amp;src=' . sp_post_image('thumbnail'); ?>" />
+            <img src="<?php  echo get_bloginfo('template_url') .'/scripts/timthumb.php?q=100&amp;w=50&amp;h=50&amp;src=' . sp_post_image('thumbnail'); ?>" />
             </a>
             
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><br />
