@@ -427,6 +427,63 @@ function get_post_image ($post_id=0, $width=0, $height=0, $img_script='') {
 	}
 }
 
+/* ---------------------------------------------------------------------- */
+/*	Get Post image
+/* ---------------------------------------------------------------------- */
+
+if( !function_exists('sp_post_image')) {
+
+	function sp_post_image($size = 'thumbnail'){
+		global $post;
+		$image = '';
+		
+		//get the post thumbnail;
+		$image = sp_post_thumbnail($size);
+		if ($image) return $image;
+		
+		//If there is still no image, get the first image from the post
+		return sp_get_first_image();
+	}
+		
+
+}
+
+/* ---------------------------------------------------------------------- */
+/*	Get Post Thumbnail
+/* ---------------------------------------------------------------------- */
+if( !function_exists('sp_post_thumbnail')) {
+
+	function sp_post_thumbnail($size = 'thumbnail'){
+		global $post;
+		$thumb = '';
+		
+		//get the post thumbnail;
+		$thumb_id = get_post_thumbnail_id($post->ID);
+		$thumb_url = wp_get_attachment_image_src($thumb_id, $size);
+		$thumb = $thumb_url[0];
+		if ($thumb) return $thumb;
+	}
+		
+
+}
+
+/* ---------------------------------------------------------------------- */
+/*	Get first image in post
+/* ---------------------------------------------------------------------- */
+if( !function_exists('sp_get_first_image')) {
+	
+	function sp_get_first_image() {
+		global $post, $posts;
+		$first_img = '';
+		ob_start();
+		ob_end_clean();
+		$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+		$first_img = $matches[1][0];
+		
+		return $first_img;
+	}
+}
+
 
 
 

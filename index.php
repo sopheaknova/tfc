@@ -12,7 +12,7 @@
 					if (have_posts()) {  while (have_posts()) { the_post(); 					
 				?>
                 	<li>
-                    <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php  echo get_post_image (get_the_id(), '', '', '' .get_bloginfo('template_url') .'/scripts/timthumb.php?q=100&amp;w=284&amp;h=196&amp;src='); ?></a>
+                    <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><img src="<?php  echo get_bloginfo('template_url') .'/scripts/timthumb.php?q=100&amp;w=284&amp;h=196&amp;src=' . sp_post_image('medium'); ?>" /></a>
                     <h2><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php limit_word(get_the_title(), 42); ?></a></h2>                     
                     <span class="date-post"><?php the_time('l, F j, Y') ?></span>                    
                     <?php the_excerpt(' Read More &rsaquo;&rsaquo;'); ?>
@@ -57,7 +57,7 @@
 					$kh_file = get_post_meta($post->ID, 'newsletterkh_value', true); 					
 				?>
 					<div class="archives-items">
-                    	<?php  echo get_post_image (get_the_id(), '', '', '' .get_bloginfo('template_url') .'/scripts/timthumb.php?q=100&amp;w=74&amp;h=98&amp;src='); ?>
+                    	<img src="<?php  echo get_bloginfo('template_url') .'/scripts/timthumb.php?q=100&amp;w=74&amp;h=98&amp;src=' . sp_post_image('medium'); ?>" />
                     	<div class="newsletterinfo">
                             <h4><?php the_title(); ?></h4><span class="date-post"> <?php the_time('l, F j, Y') ?></span>
                             <div class="btn-download">
@@ -90,7 +90,9 @@
 					if (have_posts()) {  while (have_posts()) { the_post(); 					
 				?>
 					<div class="archives-items">
-                    	<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php  echo get_post_image (get_the_id(), '', '', '' .get_bloginfo('template_url') .'/scripts/timthumb.php?q=100&amp;w=74&amp;h=98&amp;src='); ?></a>
+                    	<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+	                    	<img src="<?php  echo get_bloginfo('template_url') .'/scripts/timthumb.php?q=100&amp;w=74&amp;h=98&amp;src=' . sp_post_image('medium'); ?>" />
+                    	</a>
                     	<h4><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h4><span class="date-post"> <?php the_time('l, F j, Y') ?></span>
                         <?php echo excerpt(16); ?>
                         <div class="clear"></div>
@@ -120,9 +122,7 @@
         <!--/c1-->
         
         <div id="c2">        	
-        	<?php get_sidebar(); ?>
-            
-            
+        	<?php get_sidebar(); ?>            
         </div>
         <!--/c2-->
         <div class="clear"></div>

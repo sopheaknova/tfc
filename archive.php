@@ -38,7 +38,7 @@
 				?>
                 
                 <li class="newsletter-archive">
-                	<?php echo get_post_image (get_the_id(), '', '', '' .get_bloginfo('template_url') .'/scripts/timthumb.php?q=100&amp;w=74&amp;h=98&amp;src='); ?>
+                	<img src="<?php  echo get_bloginfo('template_url') .'/scripts/timthumb.php?q=100&amp;w=74&amp;h=98&amp;src=' . sp_post_image('thumbnail'); ?>" />
                     <div class="newsletterinfo">
                     <h4><?php the_title(); ?></h4>                             
                     <span class="date-post"><?php the_time('F j, Y') ?></span>                    
@@ -60,7 +60,7 @@
                 <?php } else { ?>
                     <!--place post archive lists-->
                     <li class="clearfloat">
-                    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php echo get_post_image (get_the_id(), '', '', '' .get_bloginfo('template_url') .'/scripts/timthumb.php?q=100&amp;w=120&amp;h=98&amp;src='); ?></a>
+                    <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><img src="<?php  echo get_bloginfo('template_url') .'/scripts/timthumb.php?q=100&amp;w=120&amp;h=98&amp;src=' . sp_post_image('thumbnail'); ?>" /></a>
                     
             <h4><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h4> 
                     

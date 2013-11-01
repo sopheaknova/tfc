@@ -3,7 +3,8 @@
 ##  CUSTOM LOGO LOGIN
 function my_custom_login_logo() {
     echo '<style type="text/css">
-        h1 a { background-image:url('.get_bloginfo('template_directory').'/images/custom-login-logo.png) !important; height:130px!important;}
+		body.login{ background-color:#ffffff; }
+        .login h1 a { background-image:url('.get_bloginfo('template_directory').'/images/custom-login-logo.png) !important; height:130px !important; background-size: auto auto !important;}
     </style>';
 }
 
@@ -30,7 +31,7 @@ add_filter('login_errors',create_function('$a', "return null;"));
 
 ##   REMOVE WORDPRESS LINK ON ADMIN LOGIN LOGO 
 function remove_link_on_admin_login_info() {
-     return  bloginfo('url');
+     return  get_bloginfo('url');
 }
   
 add_filter('login_headerurl', 'remove_link_on_admin_login_info');
